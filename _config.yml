@@ -10,7 +10,7 @@ syntax-highlight: True
 # Sections shown in the index page
 
 pages_list:
-  About: 'about'
+  关于: 'about'
   Blog: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
@@ -63,7 +63,7 @@ type-speed: 4 # Default 10
 start-delay: 2000 # Default 200
 delete-delay: 50000 # Default 5000
 lines: # You can add HTML Tags in the Text
-  - text: "Protecting what you ❤️"
+  - text: "Welcome to my Blog!!"
 
 ########
 # Blog #
