@@ -1,87 +1,45 @@
-# Hydejack
+# jekyll-uno
 
-Hydejack is a pretentious two-column [Jekyll](http://jekyllrb.com) theme, stolen by [`@qwtel`](https://twitter.com/qwtel) from [Hyde](http://hyde.getpoole.com). You could say it was.. [hydejacked](http://media3.giphy.com/media/makedRIckZBW8/giphy.gif).
+Jekyll-Uno - a minimal, responsive theme for Jekyll based on the [Uno](https://github.com/daleanthony/Uno) theme for Ghost.
 
-## Features
-Unlike Hyde, it's very opinionated about how you are going to use it.
+> :warning:
+  This theme requires ruby and rubygems installed
 
-Features include:
+### Features
 
-* Touch-enabled sidebar / drawer for mobile, including fallback when JS is disabled.
-* Github Pages compatible tag support based on [this post][tag].
-* Customizable link color and sidebar image, per-site, per-tag and per-post.
-* Optional author section at the bottom of each post.
-* Optional comment section powered by Disqus.
-* Layout for posts grouped by year
-* Wide array of social media icons on sidebar.
-* Math blocks via [KaTeX](https://khan.github.io/KaTeX/).
+* Clean layout
+* Resposive layout
+* Pagination
+* Syntax highlighting
+* Social links
+* Tags listing page
+* Categories listing page
+* Google Analytics integration
+* Disqus integration
 
-## Download
-Hydejack is developed on and hosted with GitHub. Head to the [GitHub repository](https://github.com/qwtel/hydejack) for downloads, bug reports, and feature requests.
+---
 
-## Sidebar
-I love the original Hyde theme, but unfortunately the layout isn't as great on small screens.
-Since the sidebar moves to the top, the user has to scroll down just to read the title of a blog post.
+### Install and Test
 
-By using a drawer component I was able to retain the original two column layout. It's possible to move the drawer via touch input (with the help of a little JavaScript).
+1. Download or clone repo `git clone git@github.com:joshgerdes/jekyll-uno.git`
+2. Enter the folder: `cd jekyll-uno/`
+3. If you don't have bundler installed: `gem install bundler`
+3. Install Ruby gems: `bundle install`
+4. Start Jekyll server: `bundle exec jekyll serve --watch`
 
-Since the background image contributes to the feel of the page I'm letting it peek over the edge a bit. This also provides a hint to the user that an interaction is possible.
+Access via: [http://localhost:4000/jekyll-uno/](http://localhost:4000/jekyll-uno/)
 
-## Manual
+---
 
-### Configuration
-You can configure important aspects of the theme via [`_config.yml`](https://github.com/qwtel/hydejack/blob/master/_config.yml). This includes:
+### Demo and Download
 
-* the blog description in the sidebar
-* the (optional) author description and photo
-* default image and link color of the blog
-* the github and twitter usernames
+[Demo](http://joshgerdes.com/jekyll-uno/)
+[Download](https://github.com/joshgerdes/jekyll-uno/archive/master.zip)
 
-### How to Change the Image and Color of a Post
-In the manifest of a blog post, simply add an url as `image` and a CSS color as `color`:
+![jekyll-uno - free Jekyll theme](/screenshot.png)
 
-~~~yml
-layout: post
-title: Introducing Hydejack
-image: http://qwtel.com/hydejack/public/img/hyde.jpg
-color: '#949667'
-~~~
+---
 
-### How to Add a New Tag
-Tags are possible, but they are not meant to be used #instagram #style: #food #goodfood #happy #happylife #didimentionfood #yougetthepoint. Each tag requires some setup work. I tend to think of it as categories that can be combined.
+### Copyright and license
 
-1.  Add an entry to `_data/tags.yml`, where the key represents a slug and provide at least a `name` value and optionally `image`, `color` and `description`.
-
-    Example `/_data/tags.yml`:
-
-    ~~~yml
-    mytag:
-      name: My Tag
-    ~~~
-
-2.  Make a new file in the `tag` folder, using the same name you've used as the key / slug and change the `tag` and `permalink` entries.
-
-    Example `/tag/mytag.md`:
-
-    ~~~yml
-    layout: blog-by-tag
-    tag: mytag
-    permalink: /tag/mytag/
-    ~~~
-
-3.  Tag your blog posts using the `tags` key (color and image will only depend on the first tag).
-
-    ~~~yml
-    layout: post
-    title: Introducing My New Tag
-    tags: [mytag, othertag]
-    ~~~
-
-4. (optional) Add the tag to the sidebar, by adding it to `sidebar_tags` in `_config.yml`.
-   They will appear in the listed order.
-
-   ~~~yml
-   sidebar_tags: [mytag, othertag]
-   ~~~
-
-[tag]: http://www.minddust.com/post/tags-and-categories-on-github-pages/
+It is under [the MIT license](/LICENSE).
