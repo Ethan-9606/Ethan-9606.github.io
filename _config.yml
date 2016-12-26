@@ -10,7 +10,7 @@ syntax-highlight: True
 # Sections shown in the index page
 
 pages_list:
-  About: 'about'
+  About: 'abou'
   Blog: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
@@ -30,12 +30,12 @@ icon-192p: "/img/web-app/icon-192p.png"
 #############
 
 author: "Ethan"
-lang: "en"
-title: "{ Ethan Zhang }"
+lang: "zh"
+title: "Ethan Zhang's Blog"
 short-title: "{ Ethan }"
 favicon: "/img/black-lock.png"
-description: "Blog of Panos Sakkos, blogging mainly about tech. Opinions expressed are mine."
-keywords: "panos, sakkos, technology, computer science, Pwn Mail, WriteRight, UoA, di, CERN, MDCN, Microsoft, Office Graph, Machine Learning, Databases, jekyll"
+description: "Blog of Ethan, 关于装逼"
+keywords: "Android,装逼"
 
 ################
 # Intro layout #
@@ -129,9 +129,9 @@ email: "zss9606@126.com"
 # This works best when your author blurb image has a transparent background, or matches your site background color.
 
 # if the author_blurb is not set, then this feature is skipped
-author_blurb: "Panos is on a mission to protect what you love by delivering products
-that utilize cryptographic principles and respect the privacy of their users. In the past
-he did research in Computer Security and Machine Learning and currently he works as a Software Engineer for Office 365."
+author_blurb: "真是他妈
+呵呵哒
+哈哈"
 author_blurb_image: "/img/me.jpg"
 
 ##################
