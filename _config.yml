@@ -10,7 +10,7 @@ syntax-highlight: True
 # Sections shown in the index page
 
 pages_list:
-  About: 'abou'
+  About: 'about'
   Blog: 'latest-post'
   Timeline: 'timeline'
   Contact: 'contact'
