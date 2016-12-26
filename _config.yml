@@ -1,7 +1,7 @@
 
 # Site settings
 
-url: "https://panossakkos.github.io"
+url: "https://ethan-9606.github.io"
 baseurl: ""
 force-https: True
 
@@ -29,10 +29,10 @@ icon-192p: "/img/web-app/icon-192p.png"
 # HTML Head #
 #############
 
-author: "Panos Sakkos"
+author: "Ethan"
 lang: "en"
-title: "{ Panos Sakkos }"
-short-title: "{ Panos }"
+title: "{ Ethan Zhang }"
+short-title: "{ Ethan }"
 favicon: "/img/black-lock.png"
 description: "Blog of Panos Sakkos, blogging mainly about tech. Opinions expressed are mine."
 keywords: "panos, sakkos, technology, computer science, Pwn Mail, WriteRight, UoA, di, CERN, MDCN, Microsoft, Office Graph, Machine Learning, Databases, jekyll"
@@ -119,7 +119,7 @@ timeline-img: "/img/career/default.jpg"
 # Contact layout #
 ##################
 
-email: "panos.sakkos@gmail.com"
+email: "zss9606@126.com"
 
 ################
 # Author Blurb #
@@ -139,9 +139,9 @@ author_blurb_image: "/img/me.jpg"
 ##################
 
 social:
-  - title: "github"
-    url: "https://github.com/PanosSakkos"
-  - title: "linkedin"
+  - title: "Github"
+    url: "https://github.com/Ethan-9606"
+  - title: "微博"
     url: "https://no.linkedin.com/in/PanosSakkos"
   - title: "twitter"
     url: "https://twitter.com/thepanoss"
