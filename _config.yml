@@ -3,9 +3,9 @@ title: Ethan
 subtitle: 今天我所做的一切都是为了装逼！
 welcome_message: Welcome! 
 description: 嗨，我是一个程序员。
-creator: <a href="http://www.GcsSloop.com">@GcsSloop</a>
+creator: <a href="https://ethan-9606.github.io">@Ethan</a>
 
-url: "http://www.gcssloop.com"
+url: "https://ethan-9606.github.io"
 
 permalink: /:categories/:title
 
@@ -44,11 +44,9 @@ comment:
     # duoshuo:
 # Social
 social:
-    weibo: GcsSloop
-    github: GcsSloop
-    twitter: GcsSloop
-    rss: /feed.xml
-    mail: GcsSloop@gmail.com
+    weibo: qingyan0000
+    github: Ethan-9606
+    mail: zss9606@126.com
     copyright: http://choosealicense.online
 
 # Google Analytics
