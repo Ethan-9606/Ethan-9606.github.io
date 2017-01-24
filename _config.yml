@@ -1,175 +1,59 @@
+# Basic
+title: GcsSloop
+subtitle: Just do IT later.
+welcome_message: 欢迎来到我的魔法世界! 
+description: 嗨，我是 GcsSloop，一名来自2.5次元的魔法师，Android自定义View系列文章作者，非著名程序员。
+creator: <a href="http://www.GcsSloop.com">@GcsSloop</a>
 
-# Site settings
+url: "http://www.gcssloop.com"
 
-url: "https://ethan-9606.github.io"
-baseurl: ""
-force-https: True
+permalink: /:categories/:title
 
-syntax-highlight: True
+# Format
+highlighter: rouge
+markdown: kramdown
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", tables]
 
-# Sections shown in the index page
+# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
+cover_color: slate
 
-pages_list:
-  关于: 'about'
-  Blog: 'latest-post'
-  Timeline: 'timeline'
-  Contact: 'contact'
+blog_button:
+    title: 博客
+    description: 访问博客
 
-web-app-mode: True
+nav:
+    - {title: GitHub,     in_site: false,  description: GcsSloop's GitHub,    url: 'https://github.com/GcsSloop'}
+    - {title: 目录,        in_site: true,  description: 博客目录,               url: '/timeline'}
+    - {title: 基友,        in_site: true,  description: 好基(姬)友们和他们的网站, url: '/friends'}
+    - {title: 自定义控件,   in_site: true,  description: 自定义View教程目录,      url: '/customview/CustomViewIndex'}
+    - {title: 关于,        in_site: true,  description: 关于作者 GcsSloop,       url: '/info/about'}
+    
 
-# Icons for Chrome Web App mode https://developer.chrome.com/multidevice/android/installtohomescreen
-icon-36p: "/img/web-app/icon-36p.png"
-icon-48p: "/img/web-app/icon-48p.png"
-icon-72p: "/img/web-app/icon-72p.png"
-icon-96p: "/img/web-app/icon-96p.png"
-icon-144p: "/img/web-app/icon-144p.png"
-icon-192p: "/img/web-app/icon-192p.png"
-
-#############
-# HTML Head #
-#############
-
-author: "Ethan"
-lang: "zh"
-title: "Ethan Zhang's Blog"
-short-title: "{ Ethan }"
-favicon: "/img/black-lock.png"
-description: "Blog of Ethan, 关于装逼"
-keywords: "Android,装逼"
-
-################
-# Intro layout #
-################
-
-black-favicon: "/img/lock.png"
-background-img: "../img/opera.jpg"
-me-img: "/img/me.jpg"
-
-##############################
-# Color the browser elements #
-##############################
-color-browser: "#000000"
-apple-status-bar-style: "black"
-
-##############################
-# Dynamic Text on the header #
-##############################
-
-dynamic-typing: True
-shuffle: False # Shuffle the lines.
-loop: False
-loop-count: 1 # Set False for infinite loop, or set any number for finite loop.
-type-speed: 4 # Default 10
-start-delay: 2000 # Default 200
-delete-delay: 50000 # Default 5000
-lines: # You can add HTML Tags in the Text
-  - text: "Welcome to my Blog!!"
-
-########
-# Blog #
-########
-
-enable-gesture-navigation: False
-
-post-preview-words: 96
-
-paginate: 5
-
-email-share: True
-fb-share: True
-twitter-share: True
-linkedin-share: True
-reddit-share: True
-google-plus-share: True
-tumblr-share: True
-pinterest-share: True
-pocket-share: True
-vkontakte-share: True
-
-disqus-shortname: "panossakkos"
-
-###############
-# Life Events #
-###############
-
-events:
-  - image: "/img/career/microsoft.png"
-    date: "September 2014 - Today"
-    description: "Software Engineer @ Microsoft Development Center Norway, working @ the <a href=\"https://graph.microsoft.io\" target=\"_blank\"> Office Graph</a>"
-  - image: "/img/career/microsoft.png"
-    date: "June 2013 - September 2013"
-    description: "Software Engineering Intern @ Microsoft Development Center Norway, worked @ the <a href=\"https://graph.microsoft.io\" target=\"_blank\"> Office Graph</a>"
-  - image: "/img/career/uoa.jpg"
-    date: "October 2012 - August 2014"
-    description: "Master studies @ <a href=\"http://www.di.uoa.gr/eng\" target=\"_blank\">Department of Informatics and Telecommunications</a> on Software Engineering + <a href=\"https://scholar.google.com/citations?user=UtV6LFYAAAAJ&amp;hl=en&amp;oi=ao\" target=\"_blank\">Machine Learning researcher</a> @ <a href=\"http://kddlab.di.uoa.gr\" target=\"_blank\">KDD</a> lab"
-  - image: "/img/career/cern.jpg"
-    date: "October 2011 - September 2012"
-    description: "Security researcher @ <a href=\"https://www.cern.ch\" target=\"_blank\">CERN</a>, developed linux kernel extensions to prevent cyber attacks"
-  - image: "/img/career/pwnmail.jpg"
-    date: "June 2010 - November 2010"
-    description: "Created <a href=\"https://www.google.com/search?q=pwn+mail\" target=\"_blank\">Pwn Mail</a>, a Cydia iPhone app for spoofing emails. It served &gt; 260,000 emails but it was discontinued after a legal threat by Steve Jobs"
-  - image: "/img/career/uoa.jpg"
-    date: "October 2007 - September 2011"
-    description: "Bachelor studies @ <a href=\"http://www.di.uoa.gr/eng\" target=\"_blank\">Department of Informatics and Telecommunications</a> on Computer Science and Telecomunications"
-
-# First image of the Career timeline
-timeline-img: "/img/career/default.jpg"
-
-##################
-# Contact layout #
-##################
-
-email: "zss9606@126.com"
-
-################
-# Author Blurb #
-################
-
-# The author blurb goes underneath blog posts.
-# This works best when your author blurb image has a transparent background, or matches your site background color.
-
-# if the author_blurb is not set, then this feature is skipped
-author_blurb: "真是他妈
-呵呵哒
-哈哈"
-author_blurb_image: "/img/me.jpg"
-
-##################
-# Social Buttons #
-##################
-
-social:
-  - title: "Github"
-    url: "https://github.com/Ethan-9606"
-  - title: "微博"
-    url: "https://no.linkedin.com/in/PanosSakkos"
-  - title: "twitter"
-    url: "https://twitter.com/thepanoss"
-  - title: "bitcoin"
-    url: "https://blockchain.info/address/1LHuKC9Em3KA5yoZaf7nngnNdf9K7s2gSi"
-  - title: "rss"
-    url: "/feed.xml"
-
-############
-# 404 page #
-############
-
-404-img: "/img/labtocat.png"
-
-################################################################################
-
-# Tread carefully if you want to change the variables bellow this point!
-
-# Pagination path
-paginate_path: "blog/page:num"
-
-# Enable minification SASS
-sass:
-  style: compressed
-
-# Exclusion list from the generated _site
-exclude: ["Rakefile", "LICENSE", "readme.markdown", "vendor", "scripts"]
 
 gems:
-  - jekyll-paginate
-  - jemoji
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-redirect-from
+
+# Pagination
+paginate: 10
+paginate_path: "page/:num/"
+
+# Comment
+comment:
+    disqus: GcsSloop
+    # duoshuo:
+# Social
+social:
+    weibo: GcsSloop
+    github: GcsSloop
+    twitter: GcsSloop
+    rss: /feed.xml
+    mail: GcsSloop@gmail.com
+    copyright: http://choosealicense.online
+
+# Google Analytics
+ga:
+    id: UA-82493667-1
+    host: www.gcssloop.com
