@@ -2,7 +2,6 @@
 title: Ethan
 subtitle: 今天我所做的一切都是为了装逼！
 welcome_message: Welcome! 
-description: 嗨，我是一个程序员。
 creator: <a href="https://ethan-9606.github.io">@Ethan</a>
 
 url: "https://ethan-9606.github.io"
@@ -25,7 +24,7 @@ blog_button:
 nav:
     - {title: GitHub,     in_site: false,  description: Ethan's GitHub,    url: 'https://github.com/Ethan-9606'}
     - {title: 目录,        in_site: true,  description: 博客目录,               url: '/timeline'}
-    - {title: 关于,        in_site: true,  description: 关于作者 GcsSloop,       url: '/info/about'}
+    - {title: 关于,        in_site: true,  description: 关于作者 Ethan,       url: '/info/about'}
     
 
 
