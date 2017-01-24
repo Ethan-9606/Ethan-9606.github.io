@@ -1,8 +1,8 @@
 # Basic
-title: GcsSloop
-subtitle: Just do IT later.
-welcome_message: 欢迎来到我的魔法世界! 
-description: 嗨，我是 GcsSloop，一名来自2.5次元的魔法师，Android自定义View系列文章作者，非著名程序员。
+title: Ethan
+subtitle: 今天我所做的一切都是为了装逼！
+welcome_message: Welcome! 
+description: 嗨，我是一个程序员。
 creator: <a href="http://www.GcsSloop.com">@GcsSloop</a>
 
 url: "http://www.gcssloop.com"
@@ -23,7 +23,7 @@ blog_button:
     description: 访问博客
 
 nav:
-    - {title: GitHub,     in_site: false,  description: GcsSloop's GitHub,    url: 'https://github.com/GcsSloop'}
+    - {title: GitHub,     in_site: false,  description: Ethan's GitHub,    url: 'https://github.com/Ethan-9606'}
     - {title: 目录,        in_site: true,  description: 博客目录,               url: '/timeline'}
     - {title: 关于,        in_site: true,  description: 关于作者 GcsSloop,       url: '/info/about'}
     
