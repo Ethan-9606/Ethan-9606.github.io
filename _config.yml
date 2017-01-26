@@ -1,15 +1,14 @@
 # Basic
 title: Ethan
-subtitle: 今天我所做的一切都是为了装逼！
 welcome_message: Welcome! 
-creator: <a href="https://ethan-9606.github.io">@Ethan</a>
+creator: <a href="http://blog.ethan.wiki/">@Ethan</a>
 
-url: "https://ethan-9606.github.io"
+url: "http://blog.ethan.wiki/"
 
 permalink: /:categories/:title
 
 # Format
-highlighter: rouge
+highlighter: rouge  
 markdown: kramdown
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", tables]
