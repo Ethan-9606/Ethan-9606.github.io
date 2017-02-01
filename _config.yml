@@ -47,6 +47,6 @@ social:
     copyright: http://choosealicense.online
 
 # Google Analytics
-ga:
-    id: UA-82493667-1
-    host: www.gcssloop.com
+#ga:
+#    id: UA-82493667-1
+#    host: blog.ethan.wiki
