@@ -61,11 +61,9 @@ redirect_from:
 求出这两个角度，再加上之前算出的半径，就可以算出每个item的坐标，直接给公式
 
 
-> l = w / 2 - r \* cos(∠b / count \* i + ∠a) - itemWidth / 2
-
->t = h - (r \* sin(∠b / count \* i + ∠a) - offsetY)
-
->(count = item数量 ，i是item的索引，中间按钮的索引是0，菜单项i从1开始)
+> l = w / 2 - r \* cos(∠b / count \* i + ∠a) - itemWidth / 2   
+t = h - (r \* sin(∠b / count \* i + ∠a) - offsetY)   
+(count = item数量 ，i是item的索引，中间按钮的索引是0，菜单项i从1开始)
 
 * *注意，计算 l 的时候减了一个itemWidth/2，是因为计算位置是以每个item的中心为标准，实际求的参数l是item的左边界，如果不减去 itemWidth/2 那么每个item的位置都会偏右，可以试一下。*
 
@@ -92,7 +90,7 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
 7. 提供对外能力
 
 自定义控件，首先抽象出自定义属性：
-```xml
+```
 <declare-styleable name="BottomMenu">
     <attr name="menu_marginBottom" format="dimension" />
     <attr name="menu_backgroundArcHeghit" format="dimension" />
@@ -100,7 +98,8 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
     <attr name="menu_item_marginEdge" format="dimension"/>
     <attr name="menu_backgroundColor" format="color" />
     <attr name="menu_animDuration" format="integer" />
-</declare-styleable>```
+</declare-styleable>
+```
 
 
 字面意思也基本可以理解，其中有一个`menu_marginBottom`,是按钮与底部的距离，这样便于调整位置，这个变量的存在也会稍微影响前边的公式形式，但原理不变。`menu_backgroundArcHeghit`对应**H**，`menu_backgroundHeight`对应小**h**，别的没啥说的。
@@ -469,6 +468,8 @@ private void toggleMenuItemAnim(int pos, int duration) {
     }
     ```
 从代码中可以看出，除了我之前说的menuitem动画和background动画外，我还写了菜单选中的动画效果，为了让菜单点击时体验更好，也是属性动画。
+
+* *注意，在动画完成之后要记得调用每个item的`clearAnimation`方法*
 
 事件的处理也比较简单，只需要处理DOWN事件，在菜单打开状态时，触摸任意地方致菜单关闭即可，当菜单关闭状态，除了按钮其他不响应事件也不拦截事件，这样一来，就可以将菜单铺满在任意界面，在使用菜单的同时不会影响其他交互，但一搬放在首页的tabBar上吧。只需处理一个`onTouch`方法即可：
 ```java
