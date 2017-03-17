@@ -1,10 +1,10 @@
 ---
 layout: post
-category: Teambition菜单交互
-title: 关于
-tags: Ethan, Teambition菜单
-keywords: Ethan, ethan
-excerpt: Android研发
+category: Android
+title: Teambition菜单交互iOS版Android实现
+tags: Teambition菜单 Android
+keywords: Teambition菜单, 自定义View
+excerpt: Teambition菜单Android实现
 redirect_from:
   - /2017/03/Teambition首页菜单剖析/
 ---
@@ -91,7 +91,6 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
 6. 处理Touch事件
 7. 提供对外能力
 
-
 自定义控件，首先抽象出自定义属性：
 ```xml
 <declare-styleable name="BottomMenu">
@@ -103,6 +102,8 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
     <attr name="menu_animDuration" format="integer" />
 </declare-styleable>
     ```
+
+
 字面意思也基本可以理解，其中有一个`menu_marginBottom`,是按钮与底部的距离，这样便于调整位置，这个变量的存在也会稍微影响前边的公式形式，但原理不变。`menu_backgroundArcHeghit`对应**H**，`menu_backgroundHeight`对应小**h**，别的没啥说的。
 
 再看变量：
@@ -469,7 +470,6 @@ private void toggleMenuItemAnim(int pos, int duration) {
         changeStatus();
     }
     ```
-
 从代码中可以看出，除了我之前说的menuitem动画和background动画外，我还写了菜单选中的动画效果，为了让菜单点击时体验更好，也是属性动画。
 
 事件的处理也比较简单，只需要处理DOWN事件，在菜单打开状态时，触摸任意地方致菜单关闭即可，当菜单关闭状态，除了按钮其他不响应事件也不拦截事件，这样一来，就可以将菜单铺满在任意界面，在使用菜单的同时不会影响其他交互，但一搬放在首页的tabBar上吧。只需处理一个`onTouch`方法即可：
@@ -509,4 +509,4 @@ private void toggleMenuItemAnim(int pos, int duration) {
 
 到此为止，整个控件的实现基本完成，很简单不过500多行代码，但是涉及的东西还是比较全面的，也是让我有所收获，所以分享出来。看到这可能有人不禁吐槽，这么个东西写这么长的文，真是……哈哈哈，这是态度问题（认真脸）。还有，这只是我的个人见解，如有人有更简单更完美的思路，欢迎交流。
 
-完整代码[在这](https://github.com/Ethan-9606/BottomMenu)，欢迎 **star**   **issue**
+完整代码[在这](https://github.com/Ethan-9606/BottomMenu){:target="_blank"}，欢迎 **star**   **issue**
