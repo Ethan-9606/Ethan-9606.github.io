@@ -468,11 +468,11 @@ private void toggleMenuItemAnim(int pos, int duration) {
         changeStatus();
     }
 ```
-从代码中可以看出，除了我之前说的menuitem动画和background动画外，我还写了菜单选中的动画效果，为了让菜单点击时体验更好，也是属性动画。
+从代码中可以看出，除了我之前说的menuitem动画和background动画外，我还写了菜单选中的动画效果，为了让菜单点击时体验更好，也是Tween动画。
 
 * *注意，在动画完成之后要记得调用每个item的`clearAnimation`方法*
 
-事件的处理也比较简单，只需要处理DOWN事件，在菜单打开状态时，触摸任意地方致菜单关闭即可，当菜单关闭状态，除了按钮其他不响应事件也不拦截事件，这样一来，就可以将菜单铺满在任意界面，在使用菜单的同时不会影响其他交互，但一搬放在首页的tabBar上吧。只需处理一个`onTouch`方法即可：
+事件的处理也比较简单，只需要处理DOWN事件，在菜单打开状态时，触摸任意地方致菜单关闭即可，当菜单关闭状态，除了按钮其他不响应事件也不拦截事件，这样一来，就可以将菜单铺满在任意界面，在使用菜单的同时不会影响其他交互，但一搬放在首页的tabBar上吧。只需处理一个`onTouchEvent`方法即可：
 ```java
 @Override
   public boolean onTouchEvent(MotionEvent event) {
