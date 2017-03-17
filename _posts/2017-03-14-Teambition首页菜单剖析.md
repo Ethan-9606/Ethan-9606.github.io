@@ -17,7 +17,7 @@ redirect_from:
 
 不知大家了不了解**Teambition**这个产品，反正我之前是没听过，但是因为需要，要搞它这个交互，哈哈哈。不过呢，体验起来感觉还是不错的，先来看下效果吧。
 
-![](/assets/postimage/3-14-effect.gif){:width="300"}
+![](https://ws1.sinaimg.cn/mw690/4f262e75ly1fdpvmmrx0bg20h40u07wi&690){:width="300"}
 
 这个效果是iPhone版本的，Android版并没有这个交互，乍一看这个，和经典的卫星菜单是有相似之处的，那说起来就比较好实现了，然而并不完全一样，所以在Android上实现还是要靠自己去分析一下。
 
