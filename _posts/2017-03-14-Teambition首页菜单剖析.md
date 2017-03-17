@@ -2,7 +2,7 @@
 layout: post
 category: Android
 title: Teambition菜单交互iOS版Android实现
-tags: Teambition菜单 Android
+tags: Teambition菜单，Android
 keywords: Teambition菜单, 自定义View
 excerpt: Teambition菜单Android实现
 redirect_from:
@@ -26,7 +26,7 @@ redirect_from:
 我所解析的是我通过体验这个交互分析出的原理，并不一定是他实现的真正原理。首先，这个菜单分为两个部分 —— 背景和菜单内容。这两个元素在这个过程中都是变换的动画效果，所以这个过程中是有个动画作为衔接，而这个动画也是这个交互效果是否够炫酷的关键。
 
 
-一、 首先看背景，还是两部分，渐变的半透明白色背景和蓝色圆弧背景。白色半透明这个效果这个对iOS来说实现可能很简单，可能直接拍个毛玻璃比你Android折腾半天效果还好，对Android来说直接通过 `setAlpha()` 这个方法并不能达到这个效果，不信邪的可以试试。但是Android是不输给iOS的，曲线救国也是有办法的，View类还提供了一个方法`setBackgroundColor(int color)`，这个方法参数是个颜色的值，这样就可以通过动态传入argb颜色值达到这个效果。
+**一、** 首先看背景，还是两部分，渐变的半透明白色背景和蓝色圆弧背景。白色半透明这个效果这个对iOS来说实现可能很简单，可能直接拍个毛玻璃比你Android折腾半天效果还好，对Android来说直接通过 `setAlpha()` 这个方法并不能达到这个效果，不信邪的可以试试。但是Android是不输给iOS的，曲线救国也是有办法的，View类还提供了一个方法`setBackgroundColor(int color)`，这个方法参数是个颜色的值，这样就可以通过动态传入argb颜色值达到这个效果。
 
 
 下面这个弧形背景相对复杂些，但以初中的数学能力，完全可以理解了，为了更直观，先上张图
@@ -35,13 +35,13 @@ redirect_from:
 ![](/assets/postimage/3-14-background.png)
 
 
-图中，蓝色的部分是我们想要绘制的背景，水平方向上是对称的。既然是弧，我们很容易想到圆，所以关键是找到圆心，求出半径。那么半径怎么求？相信看了这个图大家应该一目了然了。UE标尺寸是通过圆弧最高点距屏幕底部的距离 ** H **（实线部分）和圆弧和屏幕左右的交点距离底部的距离 **h** 来控制圆弧的程度，那么我们通过这两个距离也正好足以算出半径 ** R **的大小，即三角形 **OPQ** 的勾股定理，不再赘述，直接给出推导出的公式
+图中，蓝色的部分是我们想要绘制的背景，水平方向上是对称的。既然是弧，我们很容易想到圆，所以关键是找到圆心，求出半径。那么半径怎么求？相信看了这个图大家应该一目了然了。UE标尺寸是通过圆弧最高点距屏幕底部的距离 **H**（实线部分）和圆弧和屏幕左右的交点距离底部的距离 **h** 来控制圆弧的程度，那么我们通过这两个距离也正好足以算出半径 **R** 的大小，即三角形 **OPQ** 的勾股定理，不再赘述，直接给出推导出的公式
 
 > R = a/2 + w²/ 8*a   （a=H-h）
 
 求出半径 **R** 就可以找到圆心的坐标，有了圆心和半径，可以画圆了，但是，观察效果图可以发现，在菜单打开和关闭过程中，背景的开始消失都是收敛在底部的按钮上，所以说这个圆心在这个过程中并不是固定的，是动态转移的，移动的区间就是以上所求出的圆心坐标和按钮坐标之间，Y轴的变化。
 
-二、 OK，背景搞定了，那么菜单的item是什么原理呢？效果图可以看出，菜单的放置也是跟随着背景弧的弧度，那么我们就能确定，这两个圆心是同一个，只不过半径有差别，显然，菜单的半径 **r** 小于背景弧的半径 **R** 。
+**二、** OK，背景搞定了，那么菜单的item是什么原理呢？效果图可以看出，菜单的放置也是跟随着背景弧的弧度，那么我们就能确定，这两个圆心是同一个，只不过半径有差别，显然，菜单的半径 **r** 小于背景弧的半径 **R** 。
 
 `r = R-菜单离边界的距离`
 
@@ -65,13 +65,13 @@ redirect_from:
 
 >t = h - (r \* sin(∠b / count \* i + ∠a) - offsetY)
 
-> (count = item数量 ，i是item的索引，中间按钮的索引是0，菜单项i从1开始)
+>(count = item数量 ，i是item的索引，中间按钮的索引是0，菜单项i从1开始)
 
-* 注意，计算 l 的时候减了一个itemWidth/2，是因为计算位置是以每个item的中心为标准，实际求的参数l是item的左边界，如果不减去 itemWidth/2 那么每个item的位置都会偏右，可以试一下。
+* *注意，计算 l 的时候减了一个itemWidth/2，是因为计算位置是以每个item的中心为标准，实际求的参数l是item的左边界，如果不减去 itemWidth/2 那么每个item的位置都会偏右，可以试一下。*
 
 再次强调，理解以上这些公式需要对Android的自定义控件和屏幕坐标系有一定理解。
 
-三、 前两部分搞定基本搞定这个菜单的原形，但还需要一个关键的东西——**动画**。先来分析一下这个过程中，哪些元素需要动画。有菜单item，圆弧背景绘制，白色背景透明度，圆弧圆心位置。那么，我们把动画实现也分为两部分，item动画和背景动画，分别用tween动画和属性动画去实现。
+**三、** 前两部分搞定基本搞定这个菜单的原形，但还需要一个关键的东西——**动画**。先来分析一下这个过程中，哪些元素需要动画。有菜单item，圆弧背景绘制，白色背景透明度，圆弧圆心位置。那么，我们把动画实现也分为两部分，item动画和背景动画，分别用tween动画和属性动画去实现。
 
 item动画只是上下的位移和出现消失，用tween动画比较好，显然是`TranslateAnimation`和`AlphaAnimation`组合的`AnimationSet`,实现比较简单不在赘述。
 
@@ -100,15 +100,13 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
     <attr name="menu_item_marginEdge" format="dimension"/>
     <attr name="menu_backgroundColor" format="color" />
     <attr name="menu_animDuration" format="integer" />
-</declare-styleable>
-    ```
+</declare-styleable>```
 
 
 字面意思也基本可以理解，其中有一个`menu_marginBottom`,是按钮与底部的距离，这样便于调整位置，这个变量的存在也会稍微影响前边的公式形式，但原理不变。`menu_backgroundArcHeghit`对应**H**，`menu_backgroundHeight`对应小**h**，别的没啥说的。
 
 再看变量：
 ```java
-
     /**
      * 默认值
      */
@@ -192,7 +190,7 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
 解析代码就不贴了，下面看测量。为了让控件适应性更强，不一定非要在全屏下使用，需要写一下这个`onMeasure`方法：
 
 ```java
-@Override
+   @Override
    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -238,7 +236,7 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
 其实主要是处理子View的测量和`wrap_content`的情况.下面是`onLayout`方法：
 
 ```java
-@Override
+  @Override
   protected void onLayout(boolean changed, int l, int t, int r, int b) {
       if (getChildCount() < 2) {
           throw new IllegalStateException("At least one menu item");
