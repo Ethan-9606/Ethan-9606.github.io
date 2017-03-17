@@ -300,6 +300,7 @@ item动画只是上下的位移和出现消失，用tween动画比较好，显�
 绘制的关键是动画控制以上这些变量去动态绘制。
 
 下面是动画的添加：
+
 ```java
 private void toggleMenuItemAnim(int pos, int duration) {
 
@@ -475,7 +476,6 @@ private void toggleMenuItemAnim(int pos, int duration) {
 ```java
 @Override
   public boolean onTouchEvent(MotionEvent event) {
-
       if (mStatus == Status.OPEN) {
           if (!isAnimRunning) {
               toggleMenu(mAnimDuration);
@@ -488,7 +488,6 @@ private void toggleMenuItemAnim(int pos, int duration) {
 
 对外提供的能力主要是，菜单选中监听，动画过程监听，状态判断等
 ```java
-
     public View getToggleView() {
         return mButton;
     }
