@@ -466,7 +466,7 @@ private void toggleMenuItemAnim(int pos, int duration) {
         animator.start();
         changeStatus();
     }
-    ```
+```
 从代码中可以看出，除了我之前说的menuitem动画和background动画外，我还写了菜单选中的动画效果，为了让菜单点击时体验更好，也是属性动画。
 
 * *注意，在动画完成之后要记得调用每个item的`clearAnimation`方法*
@@ -484,10 +484,10 @@ private void toggleMenuItemAnim(int pos, int duration) {
       }
       return false;
   }
-  ```
+```
 
-  对外提供的能力主要是，菜单选中监听，动画过程监听，状态判断等
-  ```java
+对外提供的能力主要是，菜单选中监听，动画过程监听，状态判断等
+```java
 
     public View getToggleView() {
         return mButton;
@@ -504,7 +504,7 @@ private void toggleMenuItemAnim(int pos, int duration) {
     public boolean isOpen() {
         return mStatus == Status.OPEN;
     }
-    ```
+```
 
 到此为止，整个控件的实现基本完成，很简单不过500多行代码，但是涉及的东西还是比较全面的，也是让我有所收获，所以分享出来。看到这可能有人不禁吐槽，这么个东西写这么长的文，真是……哈哈哈，这是态度问题（认真脸）。还有，这只是我的个人见解，如有人有更简单更完美的思路，欢迎交流。
 
